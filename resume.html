@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kiran Chanda | AI Product Manager Resume</title>
+  <style>
+    :root {
+      --bg: #070b14;
+      --panel: rgba(15, 23, 42, 0.78);
+      --panel-strong: rgba(17, 24, 39, 0.96);
+      --text: #e5eefc;
+      --muted: #8fa3bf;
+      --line: rgba(148, 163, 184, 0.24);
+      --cyan: #38e8ff;
+      --blue: #6d7dff;
+      --violet: #a855f7;
+      --green: #5fffb1;
+      --amber: #ffd166;
+      --danger: #ff6b9a;
+      --shadow: 0 24px 90px rgba(0, 0, 0, 0.38);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: var(--font);
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(56, 232, 255, 0.18), transparent 30%),
+        radial-gradient(circle at 85% 20%, rgba(168, 85, 247, 0.22), transparent 34%),
+        radial-gradient(circle at 70% 85%, rgba(95, 255, 177, 0.14), transparent 34%),
+        linear-gradient(135deg, #050816 0%, #07101f 46%, #020617 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent 88%);
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(120deg, transparent, rgba(56, 232, 255, 0.07), transparent);
+      transform: translateX(-100%);
+      animation: scan 8s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    @keyframes scan {
+      0%, 12% { transform: translateX(-120%); }
+      45%, 100% { transform: translateX(120%); }
+    }
+
+    .resume-shell {
+      width: min(1180px, calc(100% - 36px));
+      margin: 28px auto 44px;
+      position: relative;
+    }
+
+    .top-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .action-btn {
+      border: 1px solid var(--line);
+      background: rgba(15, 23, 42, 0.75);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      transition: transform 0.2s ease, border 0.2s ease, background 0.2s ease;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .action-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(56, 232, 255, 0.7);
+      background: rgba(30, 41, 59, 0.9);
+    }
+
+    .resume-card {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.88), rgba(2, 6, 23, 0.78));
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      box-shadow: var(--shadow), inset 0 0 0 1px rgba(255,255,255,0.02);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      backdrop-filter: blur(24px);
+      position: relative;
+    }
+
+    .resume-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(56,232,255,0.22), transparent 22%, transparent 78%, rgba(168,85,247,0.18)),
+        linear-gradient(180deg, rgba(255,255,255,0.05), transparent 16%);
+      opacity: 0.7;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 28px;
+      padding: 42px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .identity {
+      position: relative;
+      z-index: 1;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green);
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-bottom: 16px;
+    }
+
+    .pulse-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 99px;
+      background: var(--green);
+      box-shadow: 0 0 18px rgba(95,255,177,0.95);
+      animation: pulse 1.8s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.55); opacity: 0.42; }
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      letter-spacing: -0.07em;
+      line-height: 0.94;
+      margin-bottom: 16px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(100deg, #ffffff, var(--cyan), var(--blue), var(--violet));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .headline {
+      color: #dbeafe;
+      font-size: clamp(18px, 2.4vw, 26px);
+      line-height: 1.35;
+      max-width: 820px;
+      margin-bottom: 22px;
+      font-weight: 650;
+    }
+
+    .summary {
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 790px;
+      font-size: 15.5px;
+    }
+
+    .contact-panel {
+      position: relative;
+      z-index: 1;
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      background: rgba(2, 6, 23, 0.58);
+      align-self: start;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+
+    .avatar-orb {
+      width: 86px;
+      height: 86px;
+      border-radius: 50%;
+      margin-bottom: 18px;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 30% 25%, #ffffff 0%, #a5f3fc 13%, transparent 18%),
+        conic-gradient(from 130deg, var(--cyan), var(--blue), var(--violet), var(--green), var(--cyan));
+      box-shadow: 0 0 45px rgba(56,232,255,0.35);
+      color: #020617;
+      font-weight: 950;
+      font-size: 26px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    .contact-item {
+      color: var(--muted);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      word-break: break-word;
+    }
+
+    .contact-item span:first-child {
+      color: var(--cyan);
+      width: 18px;
+      flex: 0 0 auto;
+    }
+
+    .content-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 0.92fr 1.58fr;
+      gap: 0;
+    }
+
+    aside {
+      padding: 34px 30px 42px 42px;
+      border-right: 1px solid var(--line);
+      background: rgba(2, 6, 23, 0.22);
+    }
+
+    main {
+      padding: 34px 42px 42px 34px;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #e0f2fe;
+      font-weight: 900;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--cyan), var(--violet));
+      box-shadow: 0 0 18px rgba(56,232,255,0.85);
+    }
+
+    .chip-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .chip {
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      background: rgba(15, 23, 42, 0.72);
+      border-radius: 999px;
+      padding: 8px 10px;
+      color: #dbeafe;
+      font-size: 12.5px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .chip.hot {
+      border-color: rgba(56, 232, 255, 0.38);
+      box-shadow: inset 0 0 22px rgba(56, 232, 255, 0.08);
+    }
+
+    .metric-stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .metric {
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      background: rgba(15, 23, 42, 0.54);
+      border-radius: var(--radius-md);
+      padding: 15px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .metric::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: var(--fill, 72%);
+      background: linear-gradient(90deg, var(--cyan), var(--green));
+      box-shadow: 0 0 18px rgba(56,232,255,0.75);
+    }
+
+    .metric-value {
+      font-size: 22px;
+      font-weight: 950;
+      letter-spacing: -0.04em;
+      color: #ffffff;
+    }
+
+    .metric-label {
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.45;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .role-card,
+    .project-card {
+      position: relative;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.76), rgba(30, 41, 59, 0.38));
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      overflow: hidden;
+      transition: transform 0.22s ease, border 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .role-card:hover,
+    .project-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(56,232,255,0.5);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.28);
+    }
+
+    .role-card::before,
+    .project-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(56,232,255,0.75), transparent);
+    }
+
+    .role-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 20px;
+      letter-spacing: -0.03em;
+      margin-bottom: 5px;
+    }
+
+    .company {
+      color: var(--cyan);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .date {
+      color: var(--amber);
+      font-size: 12px;
+      font-weight: 900;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    li {
+      color: var(--muted);
+      line-height: 1.62;
+      font-size: 14.5px;
+      position: relative;
+      padding-left: 22px;
+    }
+
+    li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .project-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    .project-title {
+      font-size: 18px;
+      font-weight: 950;
+      letter-spacing: -0.03em;
+    }
+
+    .status-pill {
+      color: #04111f;
+      background: linear-gradient(90deg, var(--green), var(--cyan));
+      padding: 6px 9px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 950;
+      white-space: nowrap;
+    }
+
+    .mini-note {
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.65;
+      margin-top: 10px;
+    }
+
+    .quote-box {
+      border-left: 3px solid var(--cyan);
+      background: rgba(56, 232, 255, 0.07);
+      padding: 16px 18px;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      color: #dbeafe;
+      line-height: 1.65;
+      font-weight: 650;
+    }
+
+    .edit-hint {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+      margin-top: 12px;
+      border: 1px dashed rgba(148, 163, 184, 0.35);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      background: rgba(2,6,23,0.28);
+    }
+
+    .footer-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px 42px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      position: relative;
+      z-index: 1;
+      background: rgba(2,6,23,0.28);
+    }
+
+    .signal {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--green);
+      font-weight: 850;
+    }
+
+    .signal-bars {
+      display: inline-flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 14px;
+    }
+
+    .signal-bars i {
+      width: 3px;
+      border-radius: 4px;
+      background: var(--green);
+      box-shadow: 0 0 10px rgba(95,255,177,0.8);
+    }
+
+    .signal-bars i:nth-child(1) { height: 5px; }
+    .signal-bars i:nth-child(2) { height: 9px; }
+    .signal-bars i:nth-child(3) { height: 13px; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    [contenteditable="true"] {
+      outline: 1px dashed rgba(56, 232, 255, 0.0);
+      border-radius: 8px;
+      transition: outline 0.2s ease, background 0.2s ease;
+    }
+
+    body.edit-mode [contenteditable="true"] {
+      outline-color: rgba(56, 232, 255, 0.28);
+      background: rgba(56, 232, 255, 0.045);
+    }
+
+    @media (max-width: 920px) {
+      .hero,
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      aside {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        padding: 30px;
+      }
+
+      main {
+        padding: 30px;
+      }
+
+      .hero {
+        padding: 30px;
+      }
+
+      .role-top,
+      .project-header,
+      .footer-strip {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .date,
+      .status-pill {
+        white-space: normal;
+      }
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+        color: #0f172a;
+      }
+
+      body::before,
+      body::after,
+      .top-actions,
+      .edit-hint {
+        display: none !important;
+      }
+
+      .resume-shell {
+        width: 100%;
+        margin: 0;
+      }
+
+      .resume-card {
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        background: #ffffff;
+      }
+
+      .resume-card::before {
+        display: none;
+      }
+
+      .hero,
+      aside,
+      main,
+      .footer-strip {
+        background: #ffffff;
+        color: #0f172a;
+      }
+
+      .gradient-text,
+      .company,
+      .section-title,
+      .contact-item span:first-child,
+      .date {
+        color: #0f172a;
+        background: none;
+        -webkit-background-clip: initial;
+        background-clip: initial;
+      }
+
+      .headline,
+      .summary,
+      li,
+      .metric-label,
+      .mini-note,
+      .contact-item,
+      .footer-strip {
+        color: #334155;
+      }
+
+      .contact-panel,
+      .role-card,
+      .project-card,
+      .metric,
+      .chip,
+      .quote-box {
+        background: #ffffff;
+        border-color: #cbd5e1;
+        box-shadow: none;
+      }
+
+      .avatar-orb,
+      .status-pill {
+        background: #0f172a;
+        color: #ffffff;
+        box-shadow: none;
+      }
+
+      .content-grid {
+        grid-template-columns: 0.88fr 1.6fr;
+      }
+
+      section {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume-shell">
+    <div class="top-actions">
+      <button class="action-btn" id="editToggle">Enable Edit Mode</button>
+      <button class="action-btn" onclick="window.print()">Print / Save PDF</button>
+    </div>
+
+    <article class="resume-card">
+      <header class="hero">
+        <div class="identity reveal">
+          <div class="kicker"><span class="pulse-dot"></span> AI Product Leadership · Logistics · GTM</div>
+          <h1><span class="gradient-text" contenteditable="true">Kiran Chanda</span></h1>
+          <p class="headline" contenteditable="true">AI Product Manager / Solution Architect for Logistics, TMS, and Global Trade Management Platforms</p>
+          <p class="summary" contenteditable="true">
+            I bring deep expertise in logistics processes and aspire to lead AI products that solve high-impact operational bottlenecks in TMS and trade compliance. I specialize in translating complex enterprise workflows into practical AI-enabled SaaS capabilities across shipment management, rate management, ERP integrations, item master data, HTS/ECCN/Schedule B classification, RAG-based decision support, and human-in-the-loop compliance workflows.
+          </p>
+        </div>
+
+        <aside class="contact-panel reveal">
+          <div class="avatar-orb">KC</div>
+          <div class="contact-list">
+            <div class="contact-item"><span>✉</span><span contenteditable="true">kiran.chanda@gmail.com</span></div>
+            <div class="contact-item"><span>⌖</span><span contenteditable="true">Atlanta Metro, GA · United States</span></div>
+            <div class="contact-item"><span>↗</span><span contenteditable="true">linkedin.com/in/kiran-chanda</span></div>
+            <div class="contact-item"><span>@</span><span contenteditable="true">@kiran.chanda</span></div>
+          </div>
+        </aside>
+      </header>
+
+      <div class="content-grid">
+        <aside>
+          <section class="reveal">
+            <div class="section-title">Core Positioning</div>
+            <div class="quote-box" contenteditable="true">
+              Logistics domain expert evolving into an AI Product Manager who can connect product strategy, enterprise architecture, data quality, workflow automation, and measurable business outcomes.
+            </div>
+          </section>
+
+          <section class="reveal">
+            <div class="section-title">Product Skills</div>
+            <div class="chip-cloud">
+              <span class="chip hot">AI Product Strategy</span>
+              <span class="chip hot">PRDs & Roadmaps</span>
+              <span class="chip">User Stories</span>
+              <span class="chip">MVP Scoping</span>
+              <span class="chip">Stakeholder Alignment</span>
+              <span class="chip">KPI Design</span>
+              <span class="chip">Workflow Mapping</span>
+              <span class="chip">Human-in-the-Loop UX</span>
+            </div>
+          </section>
+
+          <section class="reveal">
+            <div class="section-title">Domain Expertise</div>
+            <div class="chip-cloud">
+              <span class="chip hot">TMS</span>
+              <span class="chip hot">Global Trade Management</span>
+              <span class="chip hot">Trade Compliance</span>
+              <span class="chip">Shipment Management</span>
+              <span class="chip">Rate Management</span>
+              <span class="chip">Order Management</span>
+              <span class="chip">ERP Item Master</span>
+              <span class="chip">HTS / HS</span>
+              <span class="chip">ECCN</span>
+              <span class="chip">Schedule B</span>
+              <span class="chip">Tariff & Duty Analysis</span>
+              <span class="chip">Freight Audit</span>
+            </div>
+          </section>
+
+          <section class="reveal">
+            <div class="section-title">AI / Technical Fluency</div>
+            <div class="chip-cloud">
+              <span class="chip hot">RAG</span>
+              <span class="chip hot">Vector Search</span>
+              <span class="chip">LLM Evaluation</span>
+              <span class="chip">Embeddings</span>
+              <span class="chip">API Design</span>
+              <span class="chip">Supabase / Postgres</span>
+              <span class="chip">CSV Pipelines</span>
+              <span class="chip">Data Quality</span>
+              <span class="chip">Audit Trails</span>
+              <span class="chip">Dashboards</span>
+            </div>
+          </section>
+
+          <section class="reveal">
+            <div class="section-title">Impact Themes</div>
+            <div class="metric-stack">
+              <div class="metric" style="--fill: 92%">
+                <div class="metric-value" contenteditable="true">$500K–$2M</div>
+                <div class="metric-label" contenteditable="true">Illustrative annual compliance and penalty avoidance opportunity</div>
+              </div>
+              <div class="metric" style="--fill: 84%">
+                <div class="metric-value" contenteditable="true">10K Rows</div>
+                <div class="metric-label" contenteditable="true">Bulk classification workflow design target</div>
+              </div>
+              <div class="metric" style="--fill: 76%">
+                <div class="metric-value" contenteditable="true">&lt;3 Sec</div>
+                <div class="metric-label" contenteditable="true">Single-item AI classification response target</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="reveal">
+            <div class="section-title">Education / Certifications</div>
+            <p class="mini-note" contenteditable="true">
+              Add degree, university, certifications, AI/PM courses, Oracle/GTM/TMS credentials, or trade compliance certifications here.
+            </p>
+          </section>
+        </aside>
+
+        <main>
+          <section class="reveal">
+            <div class="section-title">Professional Experience</div>
+            <div class="timeline">
+              <div class="role-card">
+                <div class="role-top">
+                  <div>
+                    <h2 contenteditable="true">Global Trade Management System Solution Architect / Product Builder</h2>
+                    <div class="company" contenteditable="true">Enterprise SaaS · Logistics · GTM · Trade Compliance</div>
+                  </div>
+                  <div class="date" contenteditable="true">Current</div>
+                </div>
+                <ul>
+                  <li contenteditable="true">Design AI-assisted product workflows for trade item classification across HTS, ECCN, Schedule B, and country-specific classification requirements.</li>
+                  <li contenteditable="true">Translate complex logistics, TMS, ERP, and global trade compliance processes into PRDs, user stories, MVP scope, data models, API flows, and implementation-ready product requirements.</li>
+                  <li contenteditable="true">Define human-in-the-loop compliance patterns including confidence scoring, explanation, source references, audit history, escalation queues, and final analyst approval.</li>
+                  <li contenteditable="true">Partner across business, compliance, engineering, and architecture stakeholders to connect operational bottlenecks with AI-enabled decision support and measurable ROI.</li>
+                </ul>
+              </div>
+
+              <div class="role-card">
+                <div class="role-top">
+                  <div>
+                    <h2 contenteditable="true">Logistics / TMS Product & Solution Lead</h2>
+                    <div class="company" contenteditable="true">Add Company Name · Transportation Management Systems</div>
+                  </div>
+                  <div class="date" contenteditable="true">Add Dates</div>
+                </div>
+                <ul>
+                  <li contenteditable="true">Led solution design across shipment management, rate management, order management, freight workflows, exception visibility, and integrations with enterprise systems.</li>
+                  <li contenteditable="true">Mapped user journeys for logistics operators, trade compliance managers, customs analysts, and transportation teams to identify automation opportunities.</li>
+                  <li contenteditable="true">Improved product clarity by converting ambiguous business needs into structured requirements, workflow diagrams, acceptance criteria, and measurable success metrics.</li>
+                </ul>
+              </div>
+
+              <div class="role-card">
+                <div class="role-top">
+                  <div>
+                    <h2 contenteditable="true">Enterprise Integration / Systems Analyst</h2>
+                    <div class="company" contenteditable="true">Add Company Name · ERP / SaaS Integrations</div>
+                  </div>
+                  <div class="date" contenteditable="true">Add Dates</div>
+                </div>
+                <ul>
+                  <li contenteditable="true">Supported integration patterns between ERP item master data, logistics applications, trade compliance systems, and reporting dashboards.</li>
+                  <li contenteditable="true">Worked with operational datasets such as SKUs, item descriptions, product attributes, shipments, rates, classifications, broker outputs, and compliance decisions.</li>
+                  <li contenteditable="true">Helped teams improve data quality, process reliability, and system usability across enterprise supply chain workflows.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="reveal">
+            <div class="section-title">Signature AI Product Projects</div>
+            <div class="timeline">
+              <div class="project-card">
+                <div class="project-header">
+                  <div class="project-title" contenteditable="true">AI Trade Item Classification Platform</div>
+                  <span class="status-pill">MVP Concept</span>
+                </div>
+                <p class="mini-note" contenteditable="true">
+                  Product concept for a decision-support platform that classifies trade items for HTS/HS, ECCN, and Schedule B across single-item and bulk CSV workflows.
+                </p>
+                <ul>
+                  <li contenteditable="true">Defined MVP requirements for AI-generated classification suggestions, confidence score, explanation, source references, audit trail, and human validation.</li>
+                  <li contenteditable="true">Designed integration approach for ERP item master enrichment, trade content providers, public data sources, and country-specific classification workflows.</li>
+                  <li contenteditable="true">Scoped a 12-week delivery plan for a 4-engineer team, including responsive desktop/mobile UX, backend APIs, Supabase/Postgres persistence, and CSV processing.</li>
+                </ul>
+              </div>
+
+              <div class="project-card">
+                <div class="project-header">
+                  <div class="project-title" contenteditable="true">RAG Help Assistant for Logistics Users</div>
+                  <span class="status-pill">Product Design</span>
+                </div>
+                <p class="mini-note" contenteditable="true">
+                  AI training and help assistant concept that uses application help content plus controlled live API lookups to answer workflow questions for TMS users.
+                </p>
+                <ul>
+                  <li contenteditable="true">Outlined RAG pipeline using help URLs/docs, chunking, embeddings, vector database storage, retrieval, and answer generation with source grounding.</li>
+                  <li contenteditable="true">Prioritized narrow MVP scope across Shipment Management, Rate Management, and Order Management before expanding to live operational APIs.</li>
+                  <li contenteditable="true">Separated read-only decision support from write-back actions to reduce risk and improve enterprise adoption.</li>
+                </ul>
+              </div>
+
+              <div class="project-card">
+                <div class="project-header">
+                  <div class="project-title" contenteditable="true">PRD Analyzer for Product Teams</div>
+                  <span class="status-pill">AI Workflow</span>
+                </div>
+                <p class="mini-note" contenteditable="true">
+                  AI product workflow that converts messy founder ideas, user feedback, and attached PRDs into structured product specs with context, constraints, user flows, and prototype-ready screens.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="reveal">
+            <div class="section-title">Selected Product Outcomes</div>
+            <div class="role-card">
+              <ul>
+                <li contenteditable="true">Created product narratives that connect AI capability to CFO-level value, including compliance risk reduction, manual-effort savings, customs cycle-time improvement, and broker/audit productivity.</li>
+                <li contenteditable="true">Demonstrated product judgment by positioning classification AI as decision support rather than full automation, preserving analyst review and regulatory accountability.</li>
+                <li contenteditable="true">Built strong AI PM foundation across domain expertise, product discovery, technical fluency, solution architecture, data workflows, and enterprise stakeholder communication.</li>
+              </ul>
+            </div>
+          </section>
+        </main>
+      </div>
+
+      <footer class="footer-strip">
+        <div class="signal"><span class="signal-bars"><i></i><i></i><i></i></span> Ready for AI Product Manager roles in Logistics, TMS, and Global Trade Management</div>
+        <div contenteditable="true">Resume v1 · Edit directly in browser · Print to PDF</div>
+      </footer>
+    </article>
+  </div>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach((el, index) => {
+      el.style.transitionDelay = `${Math.min(index * 55, 320)}ms`;
+      observer.observe(el);
+    });
+
+    const editToggle = document.getElementById('editToggle');
+    let editing = false;
+
+    editToggle.addEventListener('click', () => {
+      editing = !editing;
+      document.body.classList.toggle('edit-mode', editing);
+      document.querySelectorAll('[contenteditable]').forEach((el) => {
+        el.setAttribute('contenteditable', editing ? 'true' : 'false');
+      });
+      editToggle.textContent = editing ? 'Disable Edit Mode' : 'Enable Edit Mode';
+    });
+
+    document.querySelectorAll('[contenteditable]').forEach((el) => {
+      el.setAttribute('contenteditable', 'false');
+    });
+
+    const metrics = document.querySelectorAll('.metric');
+    metrics.forEach((metric) => {
+      metric.addEventListener('mousemove', (event) => {
+        const rect = metric.getBoundingClientRect();
+        const x = ((event.clientX - rect.left) / rect.width) * 100;
+        const y = ((event.clientY - rect.top) / rect.height) * 100;
+        metric.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(56,232,255,0.13), rgba(15,23,42,0.54) 42%)`;
+      });
+
+      metric.addEventListener('mouseleave', () => {
+        metric.style.background = 'rgba(15, 23, 42, 0.54)';
+      });
+    });
+  </script>
+</body>
+</html>
